@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Problem /> renders correctly 1`] = `
+<section>
+  <h2>
+    Problem 1
+  </h2>
+  <h1 />
+</section>
+`;

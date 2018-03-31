@@ -2,6 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  padding-bottom: 3em;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -26,12 +27,37 @@ code {
   font-family: "IBM Plex Mono", monospace;
   font-weight: bold;
   background: #ededed;
-  padding: .2em .5em;
+  padding: 0.2em 0.5em;
   border: 1px solid #ffffff;
   white-space: pre-wrap;
 }
 
-.problem-1-result {
+.link {
+  color: #f8856e;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.button-primary {
+  margin: auto;
+  display: block;
+  background: #f8856e;
+  padding: 1em 2em;
+  color: #ffffff;
+  border: 0;
+  border-radius: 50px;
+  font-size: 14px;
+}
+
+.button-primary:hover {
+  background: #e5725b;
+}
+
+.button-primary:focus {
+  outline: none;
+}
+
+.problem-result {
   margin-top: 1em;
   font-family: "IBM Plex Mono", monospace;
   text-align: center;

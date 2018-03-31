@@ -1,15 +1,18 @@
 import axios from "axios";
 
-export const getDrivingDistance = async params => {
+export const getDrivingDistance = async (
+  { origins, destinations },
+  callback
+) => {
   try {
     const url = "https://stormy-thicket-48933.herokuapp.com/distance";
     const params = {
-      origins: "Glendale",
-      destinations: "Burbank"
+      origins,
+      destinations
     };
     const { data } = await axios.post(url, params);
-    console.log("data:", data);
-  } catch (e) {
-    console.warn(e);
+    callback(data);
+  } catch (error) {
+    callback({ error: "Check your input. Heroku might be asleep. Try again!" });
   }
 };

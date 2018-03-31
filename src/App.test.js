@@ -1,9 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import renderer from "react-test-renderer";
 import App from "./App";
 
 describe("<App />", () => {
-  test("should shallow render App component", () => {
-    const wrapper = shallow(<App />);
+  test("should render App component with 3 problems", () => {
+    const tree = renderer.create(<App />).toJSON();
+    expect(tree.length).toEqual(3);
   });
 });
