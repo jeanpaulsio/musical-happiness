@@ -15,9 +15,15 @@ class App extends Component {
   };
 
   renderDepth = input => {
+    let validArray = true;
+    try {
+      JSON.parse(input);
+    } catch (e) {
+      validArray = false;
+    }
     const arrayOfChars = splitStringByChar(input);
 
-    return calculateDepth(arrayOfChars);
+    return validArray && calculateDepth(arrayOfChars);
   };
 
   handleFetchDrivingDistance = async (origins, destinations) => {
@@ -43,7 +49,7 @@ class App extends Component {
             <div>
               <Input
                 value={this.state.bracketMatcherValue}
-                placeholder="Type an array"
+                placeholder="Enter a valid array"
                 onChange={e =>
                   this.setState({ bracketMatcherValue: e.target.value })
                 }
